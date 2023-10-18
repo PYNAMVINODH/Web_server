@@ -1,7 +1,7 @@
 # Developing a Simple Webserver
-Name: Karthi Govindharaju
-ID: ISAI005
-
+Name:  PYNAM VINODH
+ID:  23004069
+Email : pynamvinodh6@gmail.com
 # AIM:
 
 Develop a webserver to display about top five web application development frameworks.
@@ -28,8 +28,32 @@ Serving the HTML pages.
 
 Testing the webserver
 # PROGRAM:
-Type your code here
+```from http.server import HTTPServer, BaseHTTPRequestHandler
+
+content = """
+<html>
+<head>
+<body>
+<h1>Welcome</h1>
+</body>
+</head>
+</html>
+"""
+
+class HelloHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request recieved")
+        self.send_response(200)
+        self.send_header('Content-type','text/html;charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+print("This is my webserver")
+server_address = ('',80)
+httpd = HTTPServer(server_address,HelloHandler)
+```
 # OUTPUT:
+![image](https://github.com/PYNAMVINODH/Web_server/assets/145742678/e73e0d69-a3ff-4392-9f19-27498c4f8ccf)
 
 # RESULT:
 
